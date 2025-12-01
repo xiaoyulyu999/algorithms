@@ -17,7 +17,7 @@ int airlines::solution(std::vector<std::pair<int, int>>& airlines)
         checkList.push_back({airline.second, -1});
     }
 
-    std::sort(checkList.begin(), checkList.end(), [](std::pair<int, int> a, std::pair<int, int> b)
+    std::ranges::sort(checkList, [](std::pair<int, int> a, std::pair<int, int> b)
     {
         if (a.first == b.first) return a.second < b.second;
         return a.first < b.first;
