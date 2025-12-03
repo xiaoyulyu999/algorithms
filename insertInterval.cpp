@@ -22,7 +22,7 @@ std::vector<std::pair<int, int>> insertInterval::insertNewInterval(
         {
             newIntervals.push_back(*newInterval);
             newIntervals.push_back(current);
-            newInterval = nullptr;               // <-- correctly set to null
+            newInterval = nullptr;
         }
         // Case 3: overlap ⇒ merge
         else
