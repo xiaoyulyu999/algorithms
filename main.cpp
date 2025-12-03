@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "airlines.h"
+#include "insertInterval.h"
 #include "meetingRoom.h"
 #include "mergeIntervals.h"
 #include "threeSome.h"
@@ -23,9 +24,17 @@ int main()
     // std::cout << result << std::endl;
 
     //Merge over laps
-    std::vector<std::pair<int, int>> intervals = {{1, 3},{2, 6}, {8, 10},{9, 18}};
-    auto result = mergeIntervals::merge(intervals);
+    // std::vector<std::pair<int, int>> intervals = {{1, 3},{2, 6}, {8, 10},{9, 18}};
+    // auto result = mergeIntervals::merge(intervals);
+    // for (auto interval : result) std::cout << interval.first << ' ' << interval.second << '\n';
+
+
+    //Insert
+    std::vector<std::pair<int, int>> intervals = {{1, 3}, {6, 9}};
+    std::pair<int, int> newInterval = {2, 5};
+    auto result = insertInterval::insertNewInterval(intervals, &newInterval);
     for (auto interval : result) std::cout << interval.first << ' ' << interval.second << '\n';
+
 
     return 0;
 }
