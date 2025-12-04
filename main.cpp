@@ -4,6 +4,7 @@
 #include "insertInterval.h"
 #include "meetingRoom.h"
 #include "mergeIntervals.h"
+#include "removeFullOverLap.h"
 #include "removeInterval.h"
 #include "threeSome.h"
 
@@ -31,13 +32,18 @@ int main()
 
 
     //Insert
-    std::vector<std::pair<int, int>> intervals = {{0, 2}, {3, 4}, {5, 7}};
-    std::pair<int, int> newInterval = {1, 6};
+    // std::vector<std::pair<int, int>> intervals = {{0, 2}, {3, 4}, {5, 7}};
+    // std::pair<int, int> newInterval = {1, 6};
     // auto result = insertInterval::insertNewInterval(intervals, &newInterval);
     // for (auto interval : result) std::cout << interval.first << ' ' << interval.second << '\n';
+    //
+    // auto res = removeInterval::removeIntervals(&intervals, &newInterval);
+    // for (auto interval : res) std::cout << interval.first << ' ' << interval.second << '\n';
 
-    auto res = removeInterval::removeIntervals(&intervals, &newInterval);
-    for (auto interval : res) std::cout << interval.first << ' ' << interval.second << '\n';
+    std::vector<std::pair<int, int>> intervals = {{1, 4}, {3, 6}, {2, 8}};
+    int result = removeFullCoverSolution(intervals);
+    std::cout << result << std::endl;
+
 
     return 0;
 }
