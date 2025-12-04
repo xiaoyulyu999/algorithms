@@ -44,6 +44,5 @@ int main()
     int result = removeFullCoverSolution(intervals);
     std::cout << result << std::endl;
 
-
     return 0;
 }
