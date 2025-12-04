@@ -10,7 +10,7 @@
 class minNumberRemove
 {
     public:
-    int solution(std::vector<std::pair<int , int>>*);
+    int solution(std::vector<std::pair<int , int>>&);
 };
 
 
