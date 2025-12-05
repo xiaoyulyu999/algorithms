@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "airlines.h"
+#include "commonSlot.h"
 #include "insertInterval.h"
 #include "meetingRoom.h"
 #include "mergeIntervals.h"
@@ -40,9 +41,14 @@ int main()
     // auto res = removeInterval::removeIntervals(&intervals, &newInterval);
     // for (auto interval : res) std::cout << interval.first << ' ' << interval.second << '\n';
 
-    std::vector<std::pair<int, int>> intervals = {{1, 4}, {3, 6}, {2, 8}};
-    int result = removeFullCoverSolution(intervals);
-    std::cout << result << std::endl;
+    // std::vector<std::pair<int, int>> intervals = {{1, 4}, {3, 6}, {2, 8}};
+    // int result = removeFullCoverSolution(intervals);
+    // std::cout << result << std::endl;
 
+    std::vector<std::pair<int, int>> slot_1 = {{10, 50},{60, 120},{140, 210}};
+    std::vector<std::pair<int, int>> slot_2 = {{0, 15},{60, 70}};
+    int duration = 8;
+    std::pair<int, int> earlest = earlestCommon(slot_1, slot_2, duration);
+    std::cout << earlest.first << ' ' << earlest.second << '\n';
     return 0;
 }
