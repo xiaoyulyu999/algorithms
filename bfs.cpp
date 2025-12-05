@@ -12,6 +12,8 @@ int bfs::start(Node* start, const Node* target)
     std::queue <Node*> q;
     std::unordered_set<Node*> visited;
     size_t steps = 0;
+    q.push(start);
+    visited.insert(start);
 
     while (!q.empty())
     {
