@@ -9,44 +9,22 @@
 
 int bfs::start(Node* start, Node* target)
 {
-    if (!start || !target) return -1;
-
-    std::queue<Node*> q;                 // BFS queue
-    std::unordered_set<Node*> visited;   // Faster visited check
+    std::queue <Node*> q;
+    std::unordered_set<Node*> visited;
     size_t steps = 0;
-
-    q.push(start);
-    visited.insert(start);
 
     while (!q.empty())
     {
-        size_t size = q.size();          // Number of nodes at current BFS level
-
-        for (size_t i = 0; i < size; i++)
+        for (size_t i = 0; i < q.size(); i++)
         {
-            Node* current = q.front();
+            Node* p = q.front();
             q.pop();
+            if (p == target) return 1;
 
-            if (current == target)
-                return steps;
+            if (p->left && !visited.contains(p->left)) q.push(p->left), visited.insert(p->left);
+            if (p->right && !visited.contains(p->right)) q.push(p->right), visited.insert(p->right);
 
-            // Check left child
-            if (current->left && !visited.count(current->left))
-            {
-                visited.insert(current->left);
-                q.push(current->left);
-            }
-
-            // Check right child
-            if (current->right && !visited.count(current->right))
-            {
-                visited.insert(current->right);
-                q.push(current->right);
-            }
         }
-        steps++;   // Completed one BFS layer
+    steps++;
     }
-
-    return -1; // Target not found
 }
-
