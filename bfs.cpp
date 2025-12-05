@@ -7,7 +7,7 @@
 #include <unordered_set>
 
 
-int bfs::start(Node* start, Node* target)
+int bfs::start(Node* start, const Node* target)
 {
     std::queue <Node*> q;
     std::unordered_set<Node*> visited;

@@ -9,7 +9,7 @@
 class bfs
 {
     public:
-    static int start(Node*, Node*);
+    static int start(Node*, const Node*);
 
 };
 
