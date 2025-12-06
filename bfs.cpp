@@ -23,8 +23,8 @@ int bfs::start(Node* start, const Node* target)
             q.pop();
             if (p == target) return 1;
 
-            if (p->left && !visited.contains(p->left)) q.push(p->left), visited.insert(p->left);
-            if (p->right && !visited.contains(p->right)) q.push(p->right), visited.insert(p->right);
+            if (p->left && !visited.count(p->left)) q.push(p->left), visited.insert(p->left);
+            if (p->right && !visited.count(p->right)) q.push(p->right), visited.insert(p->right);
 
         }
     steps++;
